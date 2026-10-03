@@ -1,0 +1,5 @@
+# Modelos usados por padrão no avaliar.py e baixados pelo setup.sh.
+# Um por linha. Linhas com # são ignoradas. Veja opções em https://ollama.com/library
+qwen2.5:3b
+gemma3:1b
+llama3.2:3b
