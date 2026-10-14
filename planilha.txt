@@ -2,4 +2,3 @@
 # A planilha precisa estar em Compartilhar > "Qualquer pessoa com o link" > Leitor.
 # Para usar outra aba, copie o link com a aba aberta (ele termina em #gid=...).
 # Sem link aqui, o avaliar.py usa o CSV mais recente da pasta perguntas/.
-# (bloqueado pela UFLA) https://docs.google.com/spreadsheets/d/e/2PACX-1vQHHT_4c0uQvByYZZkYOkDtgbZ_Qz9H6NxGyFxyHB5gKiEvvm3htGkn9tfZUxhDZou_PE_j1X51nW9N/pubhtml

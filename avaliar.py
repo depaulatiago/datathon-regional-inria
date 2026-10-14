@@ -2,9 +2,11 @@
 """Avalia a taxa de acerto de LLMs locais (via Ollama) em um conjunto de perguntas.
 
 Uso:
-    python3 avaliar.py                                   # modelo padrão, perguntas/exemplo.csv
+    python3 avaliar.py                                   # modelos de modelos.txt; perguntas do link
+                                                         # em planilha.txt ou do CSV mais recente em perguntas/
     python3 avaliar.py -m qwen2.5:3b gemma3:1b           # compara vários modelos
-    python3 avaliar.py -a perguntas/minhas.csv -r 3      # 3 repetições por pergunta
+    python3 avaliar.py -a perguntas_en/perguntas.csv     # perguntas em inglês
+    python3 avaliar.py -r 3 -t 0.7                       # 3 repetições por pergunta
 
 Formato do CSV (colunas):
     id, tipo, pergunta, alternativas, resposta
@@ -117,7 +119,7 @@ def extrair_letra(resposta):
         r"(?i:resposta|alternativa|letra)\W{0,3}([A-E])\b",  # "Resposta: B"
         r"^\s*\(?([A-E])[).:]",                             # "B) Júpiter"
         r"\b([A-E])\)",                                     # "... B) ..."
-        r"\b([A-E])\b",                                     # qualquer letra isolada
+        r"\b([BCD]|[AE](?!\s+[a-zà-ú]))\b",                 # letra isolada ("A"/"E" + palavra é artigo/conjunção)
     ]
     for p in padroes:
         m = re.search(p, resposta)
